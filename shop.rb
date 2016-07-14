@@ -28,8 +28,7 @@ module Shop
 
     get "/" do
       products = FetchProducts.new.call
-      stock = FetchStock.new.call
-      erb :"products/index", locals: { products: products, stock: stock, title: "Products" }
+      erb :"products/index", locals: { products: products, title: "Products" }
     end
 
     get "/products/:id" do |id|

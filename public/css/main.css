@@ -1,3 +1,4 @@
+/* header */
 .page-header {
     background-color: #EA941B;
     margin-top: 0;
@@ -10,11 +11,7 @@
     text-decoration: none;
 }
 
-.content {
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
+/* page elements */
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
 }
@@ -23,17 +20,23 @@ a, a:hover, a:visited {
   color: #43413E
 }
 
-.btn-warning {
-  background-color: #FFAD00;
-  width: 150px
-}
-
 th, td {
   width: 13%;
   padding: 5px;
 }
 
+/* class customization */
+.btn-warning {
+  background-color: #FFAD00;
+  width: 150px
+}
+
 .amount {
   width: 100px;
   border-radius: 10px;
+}
+
+.content {
+    padding-left: 40px;
+    padding-right: 40px;
 }

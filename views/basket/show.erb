@@ -11,6 +11,7 @@
         <th>Total net price</th>
         <th>Total gross price</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +25,7 @@
           <td><%= sprintf('%.2f', b[:total_gross_price]) %></td>
           <form action="/basket_remove" method="post">
             <input type="hidden" name="product_id" value=<%= b[:product].id %>>
-            <input type="hidden" name="quantity" value=<%= b[:quantity] %>>
+            <td><input type="number" class="amount" name="quantity" max="<%= b[:quantity] %>" value=1></td>
             <td><button class="btn btn-danger" type="submit">Remove item</button></td>
         </form>
         </tr>
