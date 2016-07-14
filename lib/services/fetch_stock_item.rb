@@ -1,9 +1,9 @@
 module Shop
   class FetchStockItem
     def call(item_id)
-      STOCK.find do |item|
-        item.product_id == item_id
-      end
+      return unless item_id
+      
+      STOCK.find { |item| item.product_id == item_id.to_i }
     end
   end
 end

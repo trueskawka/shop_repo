@@ -36,14 +36,14 @@
         <td></td>
         <td></td>
         <td><u>Amount due:</u></td>
-        <td><%= sprintf('%.2f', basket.
-                                  map{|item| item[:total_net_price]}.
-                                  reduce(:+)
-                        ) %></td>
-        <td><%= sprintf('%.2f', basket.
-                                  map{|item| item[:total_gross_price]}.
-                                  reduce(:+)
-                        ) %></td>
+        <td>
+          <%= sprintf('%.2f',
+                      basket.map{|item| item[:total_net_price]}.reduce(:+)) %>
+        </td>
+        <td>
+          <%= sprintf('%.2f',
+                      basket.map{|item| item[:total_gross_price]}.reduce(:+)) %>
+        </td>
       </tr>
     </tfoot>
   </table>

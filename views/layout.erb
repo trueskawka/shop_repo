@@ -1,43 +1,42 @@
 <html>
-    <head>
-        <title>Kitten shop</title>
-        <! --
-          using local bootstrap and font files
-          because of an unstable Internet connection
-        --!>
-        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="/css/lobster.css" type="text/css">
-        <link rel="stylesheet" href="/css/main.css">
-    </head>
-    <body>
+  <head>
+    <title>Kitten shop</title>
+    <! --
+      using local bootstrap and font files
+      because of an unstable Internet connection
+    --!>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/lobster.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container main-container">
+      <div class="page-header text-center">
+        <h1>Kitten shop</h1>
 
-      <div class="container main-container">
-        <div class="page-header text-center">
-          <h1>Kitten shop</h1>
-          <a href="/">
-            <button class="btn btn-warning menu-button">
-              Purrfect products
-            </button>
-          </a>
-          <a href="/basket">
-            <button class="btn btn-warning menu-button">
-              Kitten basket
-            </button>
-          </a>
-          <a href="/contact">
-            <button class="btn btn-warning menu-button">
-              Contact us
-            </button>
-          </a>
-        </div>
-
-        <div class="content container">
-            <div class="row">
-                <%= yield %>
-            </div>
-        </div>
+        <a href="/">
+          <button class="btn btn-warning menu-button">
+            Purrfect products
+          </button>
+        </a>
+        <a href="/basket">
+          <button class="btn btn-warning menu-button">
+            Kitten basket
+          </button>
+        </a>
+        <a href="/contact">
+          <button class="btn btn-warning menu-button">
+            Contact us
+          </button>
+        </a>
       </div>
 
-    </body>
+      <div class="content container">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
