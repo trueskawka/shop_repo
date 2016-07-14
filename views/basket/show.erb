@@ -10,7 +10,7 @@
         <th>Quantity</th>
         <th>Total net price</th>
         <th>Total gross price</th>
-        <th></th>
+        <th>Reduce amount</th>
         <th></th>
       </tr>
     </thead>
@@ -26,7 +26,7 @@
           <form action="/basket_remove" method="post">
             <input type="hidden" name="product_id" value=<%= b[:product].id %>>
             <td><input type="number" class="amount" name="quantity" max="<%= b[:quantity] %>" value=1></td>
-            <td><button class="btn btn-danger" type="submit">Remove item</button></td>
+            <td><button class="btn btn-danger" type="submit">Reduce</button></td>
         </form>
         </tr>
       <% end %>
