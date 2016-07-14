@@ -1,0 +1,53 @@
+<h1>Your basket</h1>
+
+<% if basket.size > 0 %>
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Unit net price</th>
+        <th>Unit gross price</th>
+        <th>Quantity</th>
+        <th>Total net price</th>
+        <th>Total gross price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% basket.each do |b| %>
+        <tr>
+          <td><h4><%= b[:product].name %></h4></td>
+          <td><%= sprintf('%.2f', b[:product].price) %></td>
+          <td><%= sprintf('%.2f', b[:product].gross_price) %></td>
+          <td><%= b[:quantity] %></td>
+          <td><%= sprintf('%.2f', b[:total_net_price]) %></td>
+          <td><%= sprintf('%.2f', b[:total_gross_price]) %></td>
+          <form action="/basket_remove" method="post">
+            <input type="hidden" name="product_id" value=<%= b[:product].id %>>
+            <input type="hidden" name="quantity" value=<%= b[:quantity] %>>
+            <td><button class="btn btn-danger" type="submit">Remove item</button></td>
+        </form>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><u>Amount due:</u></td>
+        <td><%= sprintf('%.2f', basket.
+                                  map{|item| item[:total_net_price]}.
+                                  reduce(:+)
+                        ) %></td>
+        <td><%= sprintf('%.2f', basket.
+                                  map{|item| item[:total_gross_price]}.
+                                  reduce(:+)
+                        ) %></td>
+      </tr>
+    </tfoot>
+  </table>
+<% else %>
+  <p>Your basket is empty!</p>
+  <p>Add some products for your kitten.</p>
+<% end %>
