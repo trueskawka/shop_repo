@@ -1,19 +1,19 @@
 /* header */
 .page-header {
-    background-color: #EA941B;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+  background-color: #EA941B;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #F3EEE4;
-    font-size: 36pt;
-    text-decoration: none;
+  color: #F3EEE4;
+  font-size: 36pt;
+  text-decoration: none;
 }
 
 /* page elements */
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+  font-family: 'Lobster', cursive;
 }
 
 a, a:hover, a:visited {
@@ -37,6 +37,6 @@ th, td {
 }
 
 .content {
-    padding-left: 40px;
-    padding-right: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
