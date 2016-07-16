@@ -8,13 +8,11 @@ module Shop
     @@id = 0
 
     def initialize(product_id:, quantity:)
-      if !(quantity >= 0)
-        raise(ArgumentError)
-      else
-        @id = new_id
-        @product_id = product_id
-        @quantity = quantity
-      end
+      raise(ArgumentError) unless quantity >= 0
+
+      @id = new_id
+      @product_id = product_id
+      @quantity = quantity
     end
 
     def fetch_product
