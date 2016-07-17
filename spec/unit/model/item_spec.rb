@@ -1,6 +1,6 @@
-require_relative("../../lib/model/item")
-require_relative("../../lib/model/product")
-require_relative("../../lib/services/fetch_product")
+require_relative("../../../lib/model/item")
+require_relative("../../../lib/model/product")
+require_relative("../../../lib/services/fetch_product")
 
 RSpec.describe Shop::Item do
   context "arguments" do
@@ -18,20 +18,20 @@ RSpec.describe Shop::Item do
   end
 
   context ":product_id" do
-    product_id = rand(100)
+    let(:product_id) { rand(100) }
 
     it "assigns product_id value to variable @product_id" do
       expect(Shop::Item.new(product_id: product_id, quantity: 0).product_id).
-      to eql(product_id)
+        to eql(product_id)
     end
   end
 
   context ":quantity" do
-    quantity = rand(100)
+    let(:quantity) { rand(100) }
 
     it "assigns quantity value to variable @quantity" do
       expect(Shop::Item.new(product_id: nil, quantity: quantity).quantity).
-      to eql(quantity)
+        to eql(quantity)
     end
 
     it "expects quantity >= 0" do
@@ -43,7 +43,7 @@ RSpec.describe Shop::Item do
 
   context ":id" do
     it "assings a fixnum id to variable @id" do
-      expect(Shop::Item.new(product_id: nil, quantity: 0).id.class).to eql(Fixnum)
+      expect(Shop::Item.new(product_id: nil, quantity: 0).id).to be_a(Fixnum)
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.describe Shop::Item do
     it "class variable @@id is incremented" do
       Shop::Item.new(product_id: nil, quantity: 0)
 
-      expect(Shop::Item.class_variable_get(:@@id) > 0).to eql(TRUE)
+      expect(Shop::Item.class_variable_get(:@@id)).to be > 0
     end
   end
 

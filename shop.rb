@@ -59,7 +59,12 @@ module Shop
     end
 
     get "/contact" do
-      erb :"contact/contact"
+      erb :"static/contact"
+    end
+
+    not_found do
+      status 404
+      erb :"static/404"
     end
   end
 end

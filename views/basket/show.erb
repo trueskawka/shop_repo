@@ -15,17 +15,17 @@
       </tr>
     </thead>
     <tbody>
-      <% basket.each do |b| %>
+      <% basket.each do |item| %>
         <tr>
-          <td><h4><%= b[:product].name %></h4></td>
-          <td><%= sprintf('%.2f', b[:product].price) %></td>
-          <td><%= sprintf('%.2f', b[:product].gross_price) %></td>
-          <td><%= b[:quantity] %></td>
-          <td><%= sprintf('%.2f', b[:total_net_price]) %></td>
-          <td><%= sprintf('%.2f', b[:total_gross_price]) %></td>
+          <td><h4><%= item[:product].name %></h4></td>
+          <td><%= sprintf('%.2f', item[:product].price) %></td>
+          <td><%= sprintf('%.2f', item[:product].gross_price) %></td>
+          <td><%= item[:quantity] %></td>
+          <td><%= sprintf('%.2f', item[:total_net_price]) %></td>
+          <td><%= sprintf('%.2f', item[:total_gross_price]) %></td>
           <form action="/basket_remove" method="post">
-            <input type="hidden" name="product_id" value=<%= b[:product].id %>>
-            <td><input type="number" class="amount" name="quantity" max="<%= b[:quantity] %>" value=1></td>
+            <input type="hidden" name="product_id" value=<%= item[:product].id %>>
+            <td><input type="number" class="amount" name="quantity" max="<%= item[:quantity] %>" value=1></td>
             <td><button class="btn btn-danger" type="submit">Reduce</button></td>
         </form>
         </tr>

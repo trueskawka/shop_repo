@@ -5,14 +5,12 @@ module Shop
     @@id = 0
 
     def initialize(name, price, vat = 1)
-      if !(price > 0)
-        raise(ArgumentError)
-      else
-        @id = next_id
-        @name = name
-        @price = price
-        @vat = vat
-      end
+      raise(ArgumentError) unless price > 0
+
+      @id = next_id
+      @name = name
+      @price = price
+      @vat = vat
     end
 
     def gross_price
